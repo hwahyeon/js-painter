@@ -1,5 +1,5 @@
 # Painting Board with JS
-Painting Board made with VanillaJS.
+The Painting Board made with VanillaJS.
 - JavaScript
 - Canvas
 - 2D Context
