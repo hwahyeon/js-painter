@@ -3,11 +3,17 @@ const ctx = canvas.getContext("2d");
 const colors = document.getElementsByClassName("jsColor");
 const range = document.getElementById('jsRange');
 const mode = document.getElementById('jsMode');
+const saveBtn = document.getElementById('jsSave');
+
 
 const INITIAL_COLOR = "#2c2c2c"
 
 canvas.width = 700;
 canvas.height = 700;
+
+// Canvas의 초기값 white로 설정. 이것 없으면 투명
+ctx.fillStyle = 'white';
+ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 ctx.strokeStyle = INITIAL_COLOR;
 ctx.fillStyle = INITIAL_COLOR;
@@ -52,7 +58,7 @@ function handleRangeChange(event) {
 }
 
 
-function handelModeClick() {
+function handleModeClick() {
     if(filling === true){
         filling = false;
         mode.innerText = "FILL"
@@ -69,12 +75,27 @@ function handleCanvasClick(){
 }
 
 
+// 마우스 오른쪽 클릭 금지
+function handleCM(event){
+    event.preventDefault();
+}
+
+function handleSaveClick(){
+    const image = canvas.toDataURL(); //png 기본값. "image/jpeg"
+    const link = document.createElement("a");
+    link.href = image;
+    link.download = "paingJS_EXPORT";
+    link.click(); //fake click
+}
+
+
 if (canvas) {
     canvas.addEventListener("mousemove", onMouseMove);
     canvas.addEventListener("mousedown", startPainting);
     canvas.addEventListener("mouseup", stopPainting);
     canvas.addEventListener("mouseleave", stopPainting);
     canvas.addEventListener("click", handleCanvasClick);
+    canvas.addEventListener("contextmenu", handleCM);
 }
 
 
@@ -88,5 +109,9 @@ if(range){
 }
 
 if(mode){
-    mode.addEventListener("click", handelModeClick)
+    mode.addEventListener("click", handleModeClick)
+}
+
+if(saveBtn){
+    saveBtn.addEventListener("click", handleSaveClick)
 }
