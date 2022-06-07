@@ -6,11 +6,10 @@ Painting Board made with VanillaJS.
 This Painting Board has four main functions.
 
 ## PAINT / FILL
-If the '**PAINT ON**' button is activated, you can draw the picture you want with the selected color.
-
+If the **PAINT ON** button is activated, you can draw the picture you want with the selected color.  
 <p align="center"><img src="https://blog.kakaocdn.net/dn/SAGzj/btrD9GwVUw5/eAqvOlZ8DNefnLA8v96hk1/img.gif" width="500"></p>
-</br>
-Conversely, if the '**FILL ON**' button is activated, you can fill the canvas with the selected color.
+  
+Conversely, if the **FILL ON** button is activated, you can fill the canvas with the selected color.  
 <p align="center"><img src="https://blog.kakaocdn.net/dn/b5EJty/btrEaOIeRtq/3ctcUBDluHQ7Mmux8LpiV1/img.gif" width="500"></p>
 
 ## CLEAR
