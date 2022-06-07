@@ -4,16 +4,14 @@ const colors = document.getElementsByClassName("jsColor");
 const range = document.getElementById('jsRange');
 const mode = document.getElementById('jsMode');
 const saveBtn = document.getElementById('jsSave');
-
+const clearBtn = document.getElementById('jsClear');
 
 const INITIAL_COLOR = "#2c2c2c"
 
 canvas.width = 700;
 canvas.height = 700;
 
-// Canvas의 초기값 white로 설정. 이것 없으면 투명
-ctx.fillStyle = 'white';
-ctx.fillRect(0, 0, canvas.width, canvas.height);
+canvasClear() // Canvas의 초기값 white로 설정. 이것 없으면 투명
 
 ctx.strokeStyle = INITIAL_COLOR;
 ctx.fillStyle = INITIAL_COLOR;
@@ -61,10 +59,10 @@ function handleRangeChange(event) {
 function handleModeClick() {
     if(filling === true){
         filling = false;
-        mode.innerText = "FILL"
+        mode.innerText = "PAINT ON"
     } else {
         filling = true;
-        mode.innerText = "PAINT"
+        mode.innerText = "FILL ON"
     }
 }
 
@@ -86,6 +84,12 @@ function handleSaveClick(){
     link.href = image;
     link.download = "paingJS_EXPORT";
     link.click(); //fake click
+}
+
+
+function canvasClear(){
+    ctx.fillStyle = 'white';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
 
@@ -114,4 +118,8 @@ if(mode){
 
 if(saveBtn){
     saveBtn.addEventListener("click", handleSaveClick)
+}
+
+if(clearBtn){
+    clearBtn.addEventListener("click", canvasClear)
 }
