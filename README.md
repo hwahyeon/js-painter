@@ -1,9 +1,10 @@
 # Painting Board with JS
-Painting Board made with VanillaJS. 
+Painting Board made with VanillaJS.
+- JavaScript
+- HTML5 / Canvas
 
-[Start](https://hwahyeon.github.io/paintjs/)
+**[Start](https://hwahyeon.github.io/paintjs/)**
 
-This Painting Board has four main functions.
 
 ## PAINT / FILL
 If the **PAINT ON** button is activated, you can draw the picture you want with the selected color.  
