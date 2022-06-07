@@ -5,6 +5,8 @@ const range = document.getElementById('jsRange');
 const mode = document.getElementById('jsMode');
 const saveBtn = document.getElementById('jsSave');
 const clearBtn = document.getElementById('jsClear');
+const eraserBtn = document.getElementById('jsEraser');
+
 
 const INITIAL_COLOR = "#2c2c2c"
 
@@ -66,6 +68,7 @@ function handleModeClick() {
     }
 }
 
+
 function handleCanvasClick(){
     if(filling){
         ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -77,6 +80,7 @@ function handleCanvasClick(){
 function handleCM(event){
     event.preventDefault();
 }
+
 
 function handleSaveClick(){
     const image = canvas.toDataURL(); //png 기본값. "image/jpeg"
@@ -91,6 +95,16 @@ function canvasClear(){
     ctx.fillStyle = 'white';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
+
+
+function eraserModeClick(){
+    if(filling){
+        handleModeClick()
+    }
+    ctx.strokeStyle = 'white';
+    ctx.lineWidth = 25;
+}
+
 
 
 if (canvas) {
@@ -122,4 +136,8 @@ if(saveBtn){
 
 if(clearBtn){
     clearBtn.addEventListener("click", canvasClear)
+}
+
+if(eraserBtn){
+    eraserBtn.addEventListener("click", eraserModeClick)
 }
