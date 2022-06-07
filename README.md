@@ -1,7 +1,8 @@
 # Painting Board with JS
 Painting Board made with VanillaJS.
 - JavaScript
-- HTML5 / Canvas
+- Canvas
+- 2D Context
 
 **[Start](https://hwahyeon.github.io/paintjs/)**
 
