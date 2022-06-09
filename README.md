@@ -25,4 +25,4 @@ Click the **ERASER** button to erase the picture along the mouse path.
 </br>
 
 ## SAVE
-Press this **SAVE** button if you want to save the picture. You can download your paint in PNG file format.
+Press the **SAVE** button if you want to save the picture. You can download your paint in PNG file format.
