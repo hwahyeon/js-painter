@@ -4,7 +4,7 @@ The Painting Board made with VanillaJS.
 - Canvas
 - 2D Context
 
-### **[Start](hwahyeon.github.io/js-painter/)**
+### **[Start](https://hwahyeon.github.io/js-painter/)**
 
 
 ## PAINT / FILL
